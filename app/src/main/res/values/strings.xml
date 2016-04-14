@@ -15,4 +15,6 @@
     <string name="example_stock_symbol" translatable="false">GOOG</string>
     <string name="new_stock">Add new stock</string>
     <string name="stock_is_saved">This stock is already saved!</string>
+    <string name="appwidget_text">STOCK PRICES</string>
+    <string name="add_widget">Add widget</string>
 </resources>

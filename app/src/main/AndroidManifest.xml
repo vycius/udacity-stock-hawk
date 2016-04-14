@@ -27,9 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.StockDetailActivity"/>
-
+        <activity android:name=".ui.StockDetailActivity" />
 
         <service
             android:name=".service.StockTaskService"
@@ -40,11 +38,26 @@
             </intent-filter>
         </service>
         <service android:name=".service.StockIntentService" />
+        <service
+            android:name=".service.StockWidgetRemoteViewsService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <provider
             android:name=".data.generated.QuoteProvider"
             android:authorities="com.sam_chordas.android.stockhawk.data.QuoteProvider"
             android:exported="false" />
+
+        <receiver android:name=".StockInfoWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/stock_info_widget_info" />
+        </receiver>
 
     </application>
 

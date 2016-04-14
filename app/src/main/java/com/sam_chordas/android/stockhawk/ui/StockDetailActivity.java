@@ -1,5 +1,7 @@
 package com.sam_chordas.android.stockhawk.ui;
 
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -27,6 +29,13 @@ public class StockDetailActivity extends AppCompatActivity implements
 
     private String currency;
     private LineChartView lineChartView;
+
+    public static Intent getStartActivityIntent(Context context, String currency) {
+        Intent intent = new Intent(context, StockDetailActivity.class);
+        intent.putExtra(StockDetailActivity.TAG_STOCK_SYMBOL, currency);
+
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
