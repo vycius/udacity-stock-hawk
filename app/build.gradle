@@ -32,6 +32,7 @@ dependencies {
   compile 'net.simonvt.schematic:schematic:0.6.3'
   compile 'com.melnykov:floatingactionbutton:1.2.0'
   compile 'com.android.support:design:23.3.0'
+  compile 'com.diogobernardino:williamchart:2.2'
   compile('com.github.afollestad.material-dialogs:core:0.8.5.7@aar') {
     transitive = true
   }
