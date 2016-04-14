@@ -48,6 +48,7 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
     String symbol = cursor.getString(cursor.getColumnIndex("symbol"));
     viewHolder.symbol.setText(symbol);
     viewHolder.itemView.setTag(symbol);
+    viewHolder.itemView.setContentDescription(symbol);
 
     viewHolder.bidPrice.setText(cursor.getString(cursor.getColumnIndex("bid_price")));
     int sdk = Build.VERSION.SDK_INT;
