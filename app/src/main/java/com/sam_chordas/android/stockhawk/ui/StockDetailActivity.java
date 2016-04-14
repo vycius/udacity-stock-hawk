@@ -60,8 +60,7 @@ public class StockDetailActivity extends AppCompatActivity implements
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         if (data.getCount() != 0)
             renderChart(data);
-        else
-            Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
+
     }
 
     public void renderChart(Cursor data) {
@@ -96,7 +95,10 @@ public class StockDetailActivity extends AppCompatActivity implements
 
         Animation anim = new Animation();
 
-        lineChartView.show(anim);
+        if (lineSet.size() > 1)
+            lineChartView.show(anim);
+        else
+            Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
     }
 
     @Override
